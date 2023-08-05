@@ -1,0 +1,14 @@
+#!/bin/sh
+
+EXTP=/Library/WebObjects/Extensions
+XMLP=/System/Library/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar
+JFP=/System/Library/Frameworks/JavaFoundation.framework/Resources/Java/javafoundation.jar
+JEOAP=/System/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar
+JEOCP=/System/Library/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar
+
+CLP=$JFP:$JEOCP:$JEOAP:$XMLP:$EXTP/avalon-framework-4.1.2.jar:$EXTP/axis-ant.jar:$EXTP/axis.jar:$EXTP/commons-discovery.jar:$EXTP/commons-logging.jar:$EXTP/jaxrpc.jar:$EXTP/log4j-1.2.4.jar:$EXTP/logkit-1.0.1.jar:$EXTP/saaj.jar:$EXTP/wsdl4j.jar:.
+
+echo You are in `pwd`
+
+java -cp $CLP:build/WSDL2JavaWO.jar:WSDL2JavaWO.jar com.villeo.app.wsdl2javawo.WSDL2JavaWO $*
+
